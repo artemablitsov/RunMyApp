@@ -1,4 +1,6 @@
 {
   "Image": "button.png",
-  "AppToRun": "cmd.exe"
+  "AppToRun": "",
+  "VbsToRun": "some.vbs",
+  "VbsInterpreter":  "cscript"
 }

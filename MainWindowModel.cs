@@ -23,6 +23,8 @@ namespace RunMyApp
                 var settings = JsonConvert.DeserializeObject<MainWindowModel>(File.ReadAllText(Path.Combine(baseDir, "settings.json")));
                 Image = settings.Image;
                 AppToRun = settings.AppToRun;
+                VbsToRun = settings.VbsToRun;
+                VbsInterpreter = settings.VbsInterpreter;
                 if (!File.Exists(Image))
                 {
                     throw new Exception("No image file found at: " + Image);
@@ -73,6 +75,28 @@ namespace RunMyApp
             {
                 m_AppToRun = value;
                 OnProperyChanged("AppToRun");
+            }
+        }
+
+        private string m_VbsToRun { get; set; }
+        public string VbsToRun
+        {
+            get => m_VbsToRun;
+            set
+            {
+                m_VbsToRun = value;
+                OnProperyChanged("VbsToRun");
+            }
+        }
+
+        private string m_VbsInterpreter { get; set; }
+        public string VbsInterpreter
+        {
+            get => m_VbsInterpreter;
+            set
+            {
+                m_VbsInterpreter = value;
+                OnProperyChanged("VbsInterpreter");
             }
         }
 
